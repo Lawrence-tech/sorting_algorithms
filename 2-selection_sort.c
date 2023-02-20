@@ -9,7 +9,7 @@
 */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min_idx;
+	size_t i, j, min_idx, swap;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -22,7 +22,9 @@ void selection_sort(int *array, size_t size)
 		}
 		if (min_idx != i)
 		{
-			swap(&array[min_idx], &array[i]);
+			swap = array[min_idx];
+			array[min_idx] = array[i];
+			array[i] = swap;
 			print_array(array, size);
 		}
 	}
