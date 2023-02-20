@@ -17,7 +17,10 @@ void swap(int *ptr1, int *ptr2)
 */
 void bubble_sort(int *array, size_t size)
 {
-	long unsigned int i, j;
+	size_t i, j;
+
+	if (array == NULL || size == 0)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
